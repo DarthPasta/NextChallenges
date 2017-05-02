@@ -1,8 +1,9 @@
 # require_relative '../../db/config'
 
 class Teacher < ActiveRecord::Base
-	has_many :students
-	
+	has_many :student_teachers
+	has_many :students, :through => :student_teachers
+
 	before_validation :downcase_email
 
 	validates :name, presence: true, uniqueness: {case_sensitive: false}

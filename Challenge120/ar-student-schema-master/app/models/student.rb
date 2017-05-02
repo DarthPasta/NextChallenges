@@ -3,7 +3,10 @@
 
 class Student < ActiveRecord::Base
 # implement your Student model here
-	belongs_to :teacher
+	
+	has_many :student_teachers
+	has_many :teachers, :through => :student_teachers
+	attr_accessor :name, :email, :teacher_id
 # , through: :teacher_id
 
 	def name
