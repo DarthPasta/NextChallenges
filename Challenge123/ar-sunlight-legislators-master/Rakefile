@@ -30,4 +30,8 @@ end
 desc "Run the specs"
 RSpec::Core::RakeTask.new(:specs)
 
+task "console" do
+  exec "irb -r ./db/config.rb"
+end
+
 task :default  => :specs

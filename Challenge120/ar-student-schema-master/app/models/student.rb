@@ -6,12 +6,9 @@ class Student < ActiveRecord::Base
 	
 	has_many :student_teachers
 	has_many :teachers, :through => :student_teachers
-	attr_accessor :name, :email, :teacher_id
+	attr_accessor :name, :email, :teacher_id, :fullname4, :first_name, :last_name
 # , through: :teacher_id
 
-	def name
-		first_name + " " + last_name
-	end
 
 	def age
 	
